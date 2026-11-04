@@ -46,10 +46,55 @@ vim.lsp.config("ty", {
     root_markers = { "ty.toml", "pyproject.toml", ".git" },
 })
 
+vim.lsp.config("lua_ls", {
+    cmd = { "lua-language-server" },
+
+    filetypes = { "lua" },
+
+    root_markers = {
+        ".luarc.json",
+        ".luarc.jsonc",
+        ".luacheckrc",
+        ".stylua.toml",
+        ".git",
+    },
+
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+            },
+
+            diagnostics = {
+                globals = {
+                    "vim",
+                },
+            },
+
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME,
+                },
+            },
+
+            telemetry = {
+                enable = false,
+            },
+
+            completion = {
+                callSnippet = "Replace",
+            },
+        },
+    },
+})
+
+
 vim.lsp.enable({
     "clangd",
     "ty",
     "rust_analyzer",
+    "lua-ls",
 })
 
 

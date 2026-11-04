@@ -28,6 +28,7 @@ vim.keymap.set('n', '<C-S-Right>', ':vertical resize +2<CR>', opts)
 -- buffer
 vim.keymap.set('n', '<C-Tab>', ':bnext<CR>', opts)
 
+
 -----------------
 -- Visual mode --
 -----------------

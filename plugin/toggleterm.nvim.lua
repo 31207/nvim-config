@@ -12,6 +12,7 @@ require("toggleterm").setup({
     shade_terminals = true,
     start_in_insert = true,
     persist_size = true,
+    autochdir = true,
     direction = "float",
 
     float_opts = {
